@@ -5,17 +5,13 @@ from scipy.integrate import solve_ivp
 
 
 def lorenz_equations(t, xyz: Union[list, np.ndarray], sigma: float, r: float, b: float):
-    if isinstance(xyz, list):
+    if len(xyz) != 3:
+        raise ValueError("Wrong dimension!")
+
+    if isinstance(xyz, (list, np.ndarray)):
         x, y, z = xyz
-    elif isinstance(xyz, np.ndarray):
-        x = xyz[0]
-        y = xyz[1]
-        z = xyz[2]
     else:
         raise TypeError("Check the input type of xyz, smh...")
-
-    if len(xyz) != 3:
-        raise ValueError("Why tf is xyz so long?")
 
     dxdt = sigma * (y - x)
     dydt = r * x - y - x * z
