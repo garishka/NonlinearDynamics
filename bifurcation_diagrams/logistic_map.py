@@ -36,7 +36,7 @@ def plot_logistic(x_interval: tuple, r: Union[list, float]):
 def plot_bif_diag(x0: float, r_interval: tuple, r_density: int, num_iter: int, num_skip: int):
     """Plot the bifurcation diagram for the logistic equation.
 
-    Parameters:
+    Parameters
     -----------
     x0: float
         Initial value of the x variable in the equation.
@@ -49,7 +49,7 @@ def plot_bif_diag(x0: float, r_interval: tuple, r_density: int, num_iter: int, n
     num_skip: int
         Number of iterations to skip before recording results to ensure stability.
 
-    Returns:
+    Returns
     --------
     None
     """
