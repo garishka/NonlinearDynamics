@@ -37,10 +37,10 @@ ax.set_title("Lorenz Attractor @ (σ, r, b)=(10, 350, 8/3) and (x0, y0, z0)=(-1.
 
 # plt.show()
 
-fig, ax1 = plt.subplots(1, 1, figsize=(4, 4))
+fig, ax1 = plt.subplots(1, 1, figsize=(8, 4))
 ax1.set_xlabel("x")
 ax1.set_ylabel(r"z")
-ax1.plot(solution.y[0, 250:5000], solution.y[2, 250:5000], label=f"(σ, r, b)=(10, 350, 8/3)")
+ax1.plot(solution.t, solution.y[1], label=f"(σ, r, b)=(10, 350, 8/3)")
 ax1.legend(loc="best")
 plt.tight_layout()
 plt.show()
