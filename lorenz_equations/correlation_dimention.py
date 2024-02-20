@@ -16,7 +16,7 @@ def naive_correlation_dimension(solution_y: Union[list, np.ndarray], num_substep
 
         pt = solution_y[n, :]
         for e in range(num_substeps):
-            for point in solution_y:
+            for point in solution_y[slice:, :]:
                 dist = np.linalg.norm(point - pt)       # float
                 if dist <= epsilons[e]:
                     N_array[i, e] += 1
@@ -24,7 +24,7 @@ def naive_correlation_dimension(solution_y: Union[list, np.ndarray], num_substep
     return epsilons, N_array
 
 
-eps, N = naive_correlation_dimension(lorenz_attractor.solution.y, 10, 250, 1000)
+eps, N = naive_correlation_dimension(lorenz_attractor.solution.y, 10, 250, 197_000)
 C = np.average(N, axis=0)
 log_eps = np.log(eps)
 log_C = np.log(C)

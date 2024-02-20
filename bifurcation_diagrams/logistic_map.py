@@ -86,4 +86,4 @@ def plot_bif_diag(x0: float, r_interval: tuple, r_density: int, num_iter: int, n
 
 # по някаква причина решава, че ще начертае (0, 0), не ми се занимава
 if __name__ == "__main__":
-    plot_bif_diag(x0=0.2, r_interval=(2.6, 4.), r_density=1_000, num_iter=200, num_skip=100)
+    plot_bif_diag(x0=0.2, r_interval=(2.6, 4.), r_density=1_000, num_iter=600, num_skip=300)
